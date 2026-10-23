@@ -120,11 +120,11 @@ curl http://localhost:8080/health
 
 No credentials are required for the health endpoint.
 
-## HEADER 授权参数说明
+## HEADER Authorization Parameters
 
-| Header | 类型 | 是否必填 | 默认值 | 枚举值 | 字段描述 | Example |
+| Header | Type | Required | Default | Allowed values | Description | Example |
 |---|---|---|---|---|---|---|
-| `X-Keap-Access-Token` | string | 是 | 无 | 无 | Keap Personal Access Token 或 Service Account Key(Keap 后台 Settings → API Settings 生成),本服务原样转发为 `Authorization: Bearer` | `KeapAK-a1b2c3d4e5f6g7h8i9j0` |
+| `X-Keap-Access-Token` | string | Yes | None | None | Keap Personal Access Token or Service Account Key (generated in the Keap admin under Settings → API Settings); this service forwards it as-is as `Authorization: Bearer` | `KeapAK-a1b2c3d4e5f6g7h8i9j0` |
 
 Missing the header returns `401 Unauthorized` with the required header name listed in the response body.
 
@@ -171,7 +171,7 @@ Connect your MCP client with:
 
 Tool descriptions in the MCP protocol itself are intentionally short (business-facing "what it does" summary only); full per-parameter documentation lives in each parameter's JSON-schema `description` (visible via `tools/list`), not in this table.
 
-## 测试示例 (Test Example)
+## Test Example
 
 ```bash
 curl -X POST http://localhost:8080/mcp \
